@@ -1,0 +1,3 @@
+"""
+Fake News Detection package.
+"""
