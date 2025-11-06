@@ -1,5 +1,60 @@
 # Fake News Detection
 
+This repository contains a fake news detection project with a Flask web app, model training utilities, and a small Streamlit demo for easy deployment.
+
+## What’s included
+- `src/` – main Python package with models, utils, and Flask app
+- `streamlit_app.py` – lightweight Streamlit wrapper to run a demo UI
+- `requirements.txt` – runtime dependencies
+- `requirements-dev.txt` – dev/test dependencies
+- `tests/` – unit and integration tests
+
+## Quick start (local)
+1. Create a virtual environment and activate it:
+
+```powershell
+python -m venv .venv
+.\.venv\Scripts\Activate.ps1
+```
+
+2. Install runtime dependencies:
+
+```powershell
+pip install -r requirements.txt
+```
+
+3. Run tests:
+
+```powershell
+pip install -r requirements-dev.txt
+pytest -q
+```
+
+4. Run the Streamlit demo:
+
+```powershell
+streamlit run streamlit_app.py
+```
+
+5. Or run the Flask app:
+
+```powershell
+python app.py
+```
+
+## Deploying to Streamlit Sharing
+1. Push this repo to GitHub.
+2. On Streamlit Cloud, create a new app and point it to this repo and `streamlit_app.py` as the main file.
+3. Streamlit will install the packages from `requirements.txt` and serve the app.
+
+## Notes and recommendations
+- The app falls back to a conservative rule-based classifier when no persisted model is present. For production, train a model and save it to the path defined in `src/config.py` (default: `src/models/advanced_model.joblib`).
+- Before production deploy, remove any sensitive or large artifacts (trained models you don't want in Git), and ensure models are in `models/` or an external storage system.
+
+## License
+See `LICENSE` in the repo.
+# Fake News Detection
+
 Fake News Detection in Python
 
 In this project, we have used various natural language processing techniques and machine learning algorithms to classify fake news articles using sci-kit libraries from python. 
